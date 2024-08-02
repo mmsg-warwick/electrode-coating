@@ -1,0 +1,17 @@
+# Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
+_commit: 8ec9f4c
+_src_path: https://github.com/pybamm-team/pybamm-cookiecutter.git
+backend: hatch
+branch: main
+email: frw21@ic.ac.uk
+full_name: Felix Watson
+license: BSD-3-Clause
+mypy: false
+org: mmsg-warwick
+platform: github
+project_name: electrode-coating
+project_short_description: An electrode coating modelling project that uses the PyBaMM
+    framework
+project_slug: electrode_coating
+url: https://github.com/mmsg-warwick/electrode-coating
+vcs: false
