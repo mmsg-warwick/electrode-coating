@@ -58,6 +58,7 @@ def run_coverage(session):
     """Run the coverage tests and generate an XML report."""
     session.install("setuptools", silent=False)
     session.install("coverage", silent=False)
+    session.install("-e", ".[dev]", silent=False)
     session.run("pytest", "--cov=src/electrode_coating", "--cov-report=xml", "tests/user_tests")
     # session.posargs.append("--cov=src/electrode_coating")
     # session.posargs.append("--cov-report=xml")
