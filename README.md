@@ -2,6 +2,7 @@
 
 [![Actions Status][actions-badge]][actions-link]
 [![Documentation Status][rtd-badge]][rtd-link]
+[![codecov](https://codecov.io/gh/mmsg-warwick/electrode-coating/graph/badge.svg?token=noM4mVgDpE)](https://codecov.io/gh/mmsg-warwick/electrode-coating)
 
 [![PyPI version][pypi-version]][pypi-link]
 [![Conda-Forge][conda-badge]][conda-link]
