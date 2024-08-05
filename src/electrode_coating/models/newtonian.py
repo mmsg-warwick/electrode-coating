@@ -13,7 +13,7 @@ class Newtonian(pybamm.BaseModel):
         U = pybamm.Parameter("Coating speed [m.s-1]")
 
         # for viscosity_profile
-        mu = pybamm.Parameter("Newtionian viscosity [Pa]")
+        mu = pybamm.Parameter("Newtonian viscosity [Pa]")
         gamma = pybamm.Parameter("Shear strain [s-1]")
         # m = pybamm.Parameter("Exponent parameter [t]")
 
@@ -34,7 +34,7 @@ class Newtonian(pybamm.BaseModel):
         # Governing equations
         ####################
         # for velocity_profile and thickness_convergence
-        grad = pybamm.grad(u)
+        grad = mu * pybamm.grad(u)
         self.algebraic[u] = pybamm.div(grad) - P
 
         # for viscosity_profile
