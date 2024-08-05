@@ -12,6 +12,7 @@ VENV_DIR = Path("./venv").resolve()
 @nox.session(name="docs")
 def build_docs(session: nox.Session) -> None:
     """Build the documentation and load it in a browser tab, rebuilding on changes."""
+    session.install("setuptools", silent=False)
     session.install("-e", ".[docs]")
     with session.chdir("docs/"):
         # For local development
