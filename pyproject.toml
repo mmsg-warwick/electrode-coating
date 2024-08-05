@@ -28,7 +28,7 @@ classifiers = [
   "Topic :: Scientific/Engineering",
 ]
 dynamic = ["version"]
-dependencies = ["pybamm",]
+dependencies = ["pybamm[plot,cite]",]
 
 [project.optional-dependencies]
 dev = [
