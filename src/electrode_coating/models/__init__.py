@@ -1,1 +1,0 @@
-from .newtonian import Newtonian
