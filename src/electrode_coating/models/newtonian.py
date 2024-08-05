@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 
 class Newtonian(pybamm.BaseModel):
     def __init__(self, name="Newtonian model"):
-        super().__init__(name=name)  # This initiaties the parent class
+        super().__init__(name=name)  # This initiates the parent class
 
         ##################
         # Define parameter
