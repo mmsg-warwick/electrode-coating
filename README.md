@@ -1,14 +1,14 @@
 # Electrode coating simulation package
 
-[![Actions Status][actions-badge]][actions-link]
-[![Documentation Status][rtd-badge]][rtd-link]
+[![Tests](https://github.com/mmsg-warwick/electrode-coating/actions/workflows/periodic_tests.yml/badge.svg?branch=main)](https://github.com/mmsg-warwick/electrode-coating/actions/workflows/periodic_tests.yml)
+<!-- [![Documentation Status][rtd-badge]][rtd-link] -->
 [![codecov](https://codecov.io/gh/mmsg-warwick/electrode-coating/graph/badge.svg?token=noM4mVgDpE)](https://codecov.io/gh/mmsg-warwick/electrode-coating)
 
-[![PyPI version][pypi-version]][pypi-link]
-[![Conda-Forge][conda-badge]][conda-link]
-[![PyPI platforms][pypi-platforms]][pypi-link]
+<!-- [![PyPI version][pypi-version]][pypi-link] -->
+<!-- [![Conda-Forge][conda-badge]][conda-link] -->
+<!-- [![PyPI platforms][pypi-platforms]][pypi-link] -->
 
-[![GitHub Discussions][github-discussions-badge]][github-discussions-link]
+<!-- [![GitHub Discussions][github-discussions-badge]][github-discussions-link] -->
 
 <!-- SPHINX-START -->
 
