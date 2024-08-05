@@ -5,7 +5,8 @@ electrode-coating: An electrode coating modelling project that uses the PyBaMM f
 """
 __version__ = "0.1.0"
 import pybamm
-from .entry_point import Model, parameter_sets, models
+
+from .entry_point import Model, models, parameter_sets
 
 __all__ = [
     "__version__",
