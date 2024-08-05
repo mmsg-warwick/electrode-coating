@@ -58,6 +58,14 @@ html_last_updated_fmt = "%Y-%m-%d"
 html_static_path = ["_static"]
 html_file_suffix = ".html"
 
+# For edit button
+html_context = {
+    "github_user": "mmsg-warwick",
+    "github_repo": "electrode-coating",
+    "github_version": "main",
+    "doc_path": "docs/",
+}
+
 # Add any logos and favicons for your hosted documentation here. The logo and the favicon
 # should be placed in the html_static_path directory listed above.
 # html_logo = "_static/logo.png"
@@ -103,6 +111,9 @@ extensions = [
     "nbsphinx",
     "IPython.sphinxext.ipython_console_highlighting",
 ]
+
+exclude_patterns = ["_build"]
+bibtex_bibfiles = ["refs.bib"]
 
 # ---- Options for EPUB output --------------------------------------------------------
 
