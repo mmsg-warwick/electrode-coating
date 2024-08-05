@@ -122,3 +122,8 @@ ignore = [
 line-length = 100
 exclude = ["__init__.py"]
 flake8-unused-arguments.ignore-variadic-names = true
+
+[tool.codespell]
+skip = '*.ipynb,*.ts,./src/3rdParty,./src/Test'
+count = true
+quiet-level = 3
