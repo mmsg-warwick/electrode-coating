@@ -1,4 +1,4 @@
-# electrode-coating
+# Electrode coating simulation package
 
 [![Actions Status][actions-badge]][actions-link]
 [![Documentation Status][rtd-badge]][rtd-link]
@@ -26,3 +26,34 @@
 [rtd-link]:                 https://electrode-coating.readthedocs.io/en/latest/?badge=latest
 
 <!-- prettier-ignore-end -->
+
+## 🚀 Installing the package
+The package is not yet available on PyPI so you need to install it from the source code. To do so, first clone the repository:
+
+```bash
+git clone git@github.com:mmsg-warwick/electrode-coating.git
+```
+
+If you do not have nox installed, install it with
+
+```bash
+python3 -m pip install nox
+```
+
+Then, navigate to the repository and run
+
+```bash
+nox -s dev
+```
+
+This will create a virtual environment called `venv` in your current directory and install the package in editable mode with all the development dependencies. To activate the virtual environment, run
+
+```bash
+source env/bin/activate
+```
+
+If needed, you can deactivate your virtual environment with
+
+```bash
+deactivate
+```

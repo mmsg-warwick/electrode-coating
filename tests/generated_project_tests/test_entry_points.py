@@ -1,8 +1,8 @@
-import pytest
-import electrode_coating
 import importlib.util
 import sys
 from pathlib import Path
+
+import electrode_coating
 
 
 def test_parameter_sets_entry_points():

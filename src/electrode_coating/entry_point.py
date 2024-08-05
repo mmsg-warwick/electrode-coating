@@ -31,11 +31,13 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 """
 
 
+import contextlib
 import importlib.metadata
 import sys
 import textwrap
 from collections.abc import Mapping
 from typing import Callable
+
 
 class EntryPoint(Mapping):
     """
@@ -69,12 +71,15 @@ class EntryPoint(Mapping):
     """
 
     _instances = 0
+
     def __init__(self, group):
         """Dict of entry points for parameter sets or models, lazily load entry points as"""
-        if not hasattr(self, 'initialized'):    # Ensure __init__ is called once per instance
+        if not hasattr(
+            self, "initialized"
+        ):  # Ensure __init__ is called once per instance
             self.initialized = True
             EntryPoint._instances += 1
-            self._all_entries = dict()
+            self._all_entries = {}
             self.group = group
             for entry_point in self.get_entries(self.group):
                 self._all_entries[entry_point.name] = entry_point
@@ -100,12 +105,12 @@ class EntryPoint(Mapping):
         """Check that ``key`` is a registered ``parameter_sets`` or ``models` ,
         and return the entry point for the parameter set/model, loading it needed."""
         if key not in self._all_entries:
-            raise KeyError(f"Unknown parameter set or model: {key}")
+            msg = f"Unknown parameter set or model: {key}"
+            raise KeyError(msg)
         ps = self._all_entries[key]
-        try:
+        with contextlib.suppress(AttributeError):
             ps = self._all_entries[key] = ps.load()
-        except AttributeError:
-            pass
+
         return ps
 
     def __iter__(self):
@@ -122,7 +127,8 @@ class EntryPoint(Mapping):
         try:
             return super().__getattribute__(name)
         except AttributeError as error:
-              raise error
+            raise error
+
 
 #: Singleton Instance of :class:ParameterSets """
 parameter_sets = EntryPoint(group="parameter_sets")
@@ -130,7 +136,8 @@ parameter_sets = EntryPoint(group="parameter_sets")
 #: Singleton Instance of :class:ModelEntryPoints"""
 models = EntryPoint(group="models")
 
-def Model(model:str):
+
+def Model(model: str):
     """
     Returns the loaded model object
 
