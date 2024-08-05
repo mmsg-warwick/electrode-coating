@@ -1,4 +1,4 @@
-# electrode-coating
+# Electrode coating simulation package
 
 [![Actions Status][actions-badge]][actions-link]
 [![Documentation Status][rtd-badge]][rtd-link]
@@ -26,3 +26,28 @@
 [rtd-link]:                 https://electrode-coating.readthedocs.io/en/latest/?badge=latest
 
 <!-- prettier-ignore-end -->
+
+## 🚀 Installing the package
+The package is not yet available on PyPI so you need to install it from the source code. To do so, first clone the repository:
+
+```bash
+git clone git@github.com:mmsg-warwick/electrode-coating.git
+```
+
+Then, navigate to the repository and install the package. It is strongly recommended to use a virtual environment:
+
+```bash
+python -m virtualenv env
+```
+
+Activate the virtual environment:
+
+```bash
+source env/bin/activate
+```
+
+Install the package:
+
+```bash
+pip install -e .[dev,docs]
+```
