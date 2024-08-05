@@ -58,7 +58,7 @@ jobs:
         run: uv pip install nox[uv]
 
       - name: Test project
-        run: nox -s user-tests
+        run: nox -s unit
 
       - name: Run coverage tests
         if: matrix.os == 'ubuntu-latest' && matrix.python-version == '3.12'
