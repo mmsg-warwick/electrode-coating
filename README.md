@@ -34,20 +34,26 @@ The package is not yet available on PyPI so you need to install it from the sour
 git clone git@github.com:mmsg-warwick/electrode-coating.git
 ```
 
-Then, navigate to the repository and install the package. It is strongly recommended to use a virtual environment:
+If you do not have nox installed, install it with
 
 ```bash
-python -m virtualenv env
+python3 -m pip install nox
 ```
 
-Activate the virtual environment:
+Then, navigate to the repository and run
+
+```bash
+nox -s dev
+```
+
+This will create a virtual environment called `venv` in your current directory and install the package in editable mode with all the development dependencies. To activate the virtual environment, run
 
 ```bash
 source env/bin/activate
 ```
 
-Install the package:
+If needed, you can deactivate your virtual environment with
 
 ```bash
-pip install -e .[dev,docs]
+deactivate
 ```
