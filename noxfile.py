@@ -12,6 +12,7 @@ VENV_DIR = Path("./venv").resolve()
 @nox.session(name="docs")
 def build_docs(session: nox.Session) -> None:
     """Build the documentation and load it in a browser tab, rebuilding on changes."""
+    session.install("setuptools", silent=False)
     session.install("-e", ".[docs]")
     with session.chdir("docs/"):
         # For local development
@@ -43,15 +44,10 @@ def install_and_run_tests(session, test_dir):
     session.install("-e", ".[dev]", silent=False)
     session.run("pytest", test_dir)
 
-@nox.session(name="generated-project-tests")
-def run_generated_project_tests(session):
-    """Run the tests for testing units inside generated project"""
-    install_and_run_tests(session, "tests/generated_project_tests")
-
-@nox.session(name="user-tests")
-def run_user_tests(session):
-    """Run user written tests"""
-    install_and_run_tests(session, "tests/user_tests")
+@nox.session(name="unit")
+def run_unit_tests(session):
+    """Run unit tests"""
+    install_and_run_tests(session, "tests/unit")
 
 @nox.session(name="coverage")
 def run_coverage(session):
@@ -59,7 +55,7 @@ def run_coverage(session):
     session.install("setuptools", silent=False)
     session.install("coverage", silent=False)
     session.install("-e", ".[dev]", silent=False)
-    session.run("pytest", "--cov=src/electrode_coating", "--cov-report=xml", "tests/user_tests")
+    session.run("pytest", "--cov=src/electrode_coating", "--cov-report=xml", "tests/unit")
     # session.posargs.append("--cov=src/electrode_coating")
     # session.posargs.append("--cov-report=xml")
     # run_user_tests(session)
